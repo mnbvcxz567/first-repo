@@ -9,25 +9,24 @@
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
     </head>
-    <body class="antialiased">
-        <h1>Blog Name</h1>
+
+    <body>
+    <h1 class="title">編集画面</h1>
+    <div class="content">
         <form action="/posts/{{ $post->id }}" method="POST">
             @csrf
             @method('PUT')
-            <div class="title">
-                <h2>Title</h2>
-                <input type="text" name="post[title]" placeholder="タイトル" value="{{ $port->title }}">
-                <p class="title__error" style="color:red">{{ $errors->first('post.title') }}</p>
+            <div class='content__title'>
+                <h2>タイトル</h2>
+                <input type='text' name='post[title]' value="{{ $post->title }}">
             </div>
-            <div class="body">
-                <h2>Body</h2>
-                <textarea name="post[body]" placeholder="今日も1日お疲れさまでした。">{{ $post->body }}</textarea>
-                <p class="body__error" style="color:red">{{ $errors->first('post.body') }}</p>
+            <div class='content__body'>
+                <h2>本文</h2>
+                <input type='text' name='post[body]' value="{{ $post->body }}">
             </div>
-            <input type="submit" value="update">
+            <input type="submit" value="保存">
         </form>
-        <div class="footer">
-            <a href="/posts/{{ $post->id }}">戻る</a>
-        </div>
-    </body>
+    </div>
+</body>
+
 </html>
