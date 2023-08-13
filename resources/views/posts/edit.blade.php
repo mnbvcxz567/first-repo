@@ -9,6 +9,7 @@
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
     </head>
+
     <body>
     <h1 class="title">編集画面</h1>
     <div class="content">
@@ -27,4 +28,5 @@
         </form>
     </div>
 </body>
+
 </html>
