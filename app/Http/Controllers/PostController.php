@@ -36,6 +36,7 @@ class PostController extends Controller
     return view('posts.edit')->with(['post' => $post]);
 }
 
+
 public function update(PostRequest $request, Post $post)
 {
 
@@ -50,6 +51,7 @@ public function update(PostRequest $request, Post $post)
     $post->delete();
     return redirect('/');
     }
+
 
 }
 
