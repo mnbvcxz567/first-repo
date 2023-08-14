@@ -9,6 +9,10 @@
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
     </head>
+    <x-app-layout>
+         <x-slot name="header">
+        　<a>Index</a>
+        </x-slot>
     <body class="antialiased">
         <h1>Blog Name</h1>
         <a href='/posts/create'>create</a>
@@ -27,17 +31,20 @@
                 <button type="button" onclick="deletePost({{ $post->id }})">delete</button> 
                 </form>
             </div>
+            
+            <a>ログインユーザー:{{ Auth::user()->name }}</a>
             @endforeach
         </div>
         <div class="paginate">{{ $posts -> links()}}</div>
         <script>
-    function deletePost(id) {
-        'use strict'
+            function deletePost(id) {
+             'use strict'
 
-        if (confirm('削除すると復元できません。\n本当に削除しますか？')) {
+            if (confirm('削除すると復元できません。\n本当に削除しますか？')) {
             document.getElementById(`form_${id}`).submit();
-        }
-    }
-</script>
+             }
+            }
+        </script>
     </body>
+    </x-app-layout>
 </html>
